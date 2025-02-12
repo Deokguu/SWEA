@@ -1,12 +1,11 @@
 def isPali(s):
-    opposite = s[::-1]
-    if s != opposite:
+    if s != s[::-1]:
             return False
     return True
 
 T = 10
 
-for tc in range(1, T+1):
+for _ in range(T):
     test_case = int(input())
     arr = [list(input()) for _ in range(100)]
     max_length = 1
@@ -17,7 +16,6 @@ for tc in range(1, T+1):
                 if isPali(arr[row][start: start + i]):
                     max_length = max(max_length, i)
 
-                
 
     for i in range(100, 0, -1):    
         for col in range(100):
@@ -28,4 +26,4 @@ for tc in range(1, T+1):
                 if isPali(s):
                     max_length = max(max_length, i)
 
-    print(f'#{tc} {max_length}')
+    print(f'#{test_case} {max_length}')

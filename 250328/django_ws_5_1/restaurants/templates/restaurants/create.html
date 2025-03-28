@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form action="{% url "restaurants:create" %}" method='POST'>
+  <p>식당 이름: </p> <input type="text" name='name'>
+  <p>식당 설명:</p> <input type="text" name='description'>
+  <p>식당 주소:</p> <input type="text" name='address'>
+  <p>식당 전화번호:</p> <input type="text" name='phone_number'>
+  <a href="restaurants:create">CREATE</a>
+  <a href="restaurants: index">BACK</a>
+</form>
+
+{% endblock content %}
+
+
